@@ -80,18 +80,21 @@ function mainMenu() {
 					console.log(userPenguin.name+" did a crazy hand stand! Woop woop!")
 					sleep(2000);
 					sleep(2000);
+					pebbleCount -= pebbleCost;
 					pebbleCost += 3;
 					mainMenu();
 				} else if (trickType == 2) {
 					console.log(userPenguin.name+" jumped on a bicycle and popped a wheelie!")
 					sleep(2000);
 					sleep(2000);
+					pebbleCount -= pebbleCost;
 					pebbleCost += 5;
 					mainMenu();
 				} else if (trickType == 3) {
 					console.log(userPenguin.name+" did a tripple sowcow off the high dive!")
 					sleep(2000);
 					sleep(2000);
+					pebbleCount -= pebbleCost;
 					pebbleCost += 7;
 					mainMenu();
 				}
