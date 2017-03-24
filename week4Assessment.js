@@ -43,7 +43,7 @@ var penguin = function(name, gender, type) {
 var userName;
 var pebbleCount = 20;
 var pebbleCost = 20;
-var userPenguin
+var userPenguin;
 
 //*******Functions*******
 
@@ -58,10 +58,19 @@ function mainMenu() {
 			num1 = Math.floor((Math.random()* 20) + 1);
 			num2 = Math.floor((Math.random()* 20) + 1);
 			console.log("What is "+num1+" + "+num2+"?")
-			
 			userPrompt.question("", function(entry) {
+				if (num1+num2 == entry) {
+					console.log("Correct! You win 5 pebbles!");
+					pebbleCount += 5;
+					sleep(2000);
+					mainMenu();
+				} else {
+					console.log("Incorrect! Sorry, you lose!");
+					sleep(2000);
+					mainMenu();
+				}
 
-});
+			});
 
 
 		} else if (input == "2") {
@@ -71,18 +80,21 @@ function mainMenu() {
 					console.log(userPenguin.name+" did a crazy hand stand! Woop woop!")
 					sleep(2000);
 					sleep(2000);
+					pebbleCount -= pebbleCost;
 					pebbleCost += 3;
 					mainMenu();
 				} else if (trickType == 2) {
 					console.log(userPenguin.name+" jumped on a bicycle and popped a wheelie!")
 					sleep(2000);
 					sleep(2000);
+					pebbleCount -= pebbleCost;
 					pebbleCost += 5;
 					mainMenu();
 				} else if (trickType == 3) {
 					console.log(userPenguin.name+" did a tripple sowcow off the high dive!")
 					sleep(2000);
 					sleep(2000);
+					pebbleCount -= pebbleCost;
 					pebbleCost += 7;
 					mainMenu();
 				}
