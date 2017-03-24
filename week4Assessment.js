@@ -58,7 +58,12 @@ function mainMenu() {
 		} else if (input == "2") {
 			if (pebbleCount >= pebbleCost) {
 				trickType = Math.floor((Math.random()* 3) + 1);
-
+				if (trickType == 1) {
+					console.log(userPenguin.name+" did a crazy hand stand! Woop woop!")
+					sleep(2000);
+					sleep(2000);
+					mainMenu();
+				}
 			}
 		} else if (input == "0") {
 			//end game
