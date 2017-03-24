@@ -43,7 +43,7 @@ var penguin = function(name, gender, type) {
 var userName;
 var pebbleCount = 20;
 var pebbleCost = 20;
-var userPenguin
+var userPenguin;
 
 //*******Functions*******
 
