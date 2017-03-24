@@ -56,7 +56,10 @@ function mainMenu() {
 		if (input == "1") {
 			//math time!
 		} else if (input == "2") {
-			if ()
+			if (pebbleCount >= pebbleCost) {
+				trickType = Math.floor((Math.random()* 3) + 1);
+
+			}
 		} else if (input == "0") {
 			//end game
 			process.exit();
