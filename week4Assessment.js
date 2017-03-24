@@ -30,6 +30,11 @@ var wipeScreen = function () {
 
 //*******Constructors*******
 
+var penguin = function(name, gender, type) {
+	this.name = name;
+	this.gender = gender;
+	this.type = type;
+}
 
 
 
