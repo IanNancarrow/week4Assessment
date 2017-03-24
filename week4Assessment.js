@@ -65,14 +65,35 @@ function mainMenu() {
 function penguinMaker() {
 	wipeScreen();
 	sleep(500);
+	console.log("Nice to meet you!")
+	sleep(1000);
 	console.log("I see you have a penguin with you, "+userName+"! What's their name?");
 	userPrompt.question("", function(name) {
-		console.log("Are they a boy or a girl?");
+		console.log("\nAre they a boy or a girl?");
 		userPrompt.question("", function(gender) {
-			console.log("What kind of penguin are they?");
-			userPrompt.question("", function(type) {
-				mainMenu();
-			});
+			gender = gender.toUpperCase();
+			if (gender == "BOY" || gender == "GIRL") {
+				wipeScreen();
+				sleep(500);
+				console.log("What kind of penguin are they?");
+				sleep(1000);
+				console.log("Emperor?");
+				sleep(200);
+				console.log("Gentoo?");
+				sleep(200);
+				console.log("Rockhopper?");
+				sleep(200);
+				userPrompt.question("", function(type) {
+				type = type.toUpperCase();
+				if (type == "EMPEROR" || type == "GENTOO" || type == "ROCKHOPPER")
+					mainMenu();
+				});
+			} else {
+				console.log("Sorry, please tell me if they're a BOY or a GIRL. Let's start again...")
+				sleep(2000);
+				sleep(2000);
+				penguinMaker();
+			}
 		});
 	});
 }
@@ -80,7 +101,7 @@ function penguinMaker() {
 function playerName() {
 	console.log("Hello there! What's your name?")
 	userPrompt.question("", function(entry) {
-		userName = entry;
+		userName = entry.toUpperCase();;
 		penguinMaker();
 	});
 }
