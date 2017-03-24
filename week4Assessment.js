@@ -51,12 +51,33 @@ function mainMenu() {
 	wipeScreen();
 	console.log("Alright, what would you and "+ userPenguin.name +" like to do?");
 	console.log("You currently have "+ pebbleCount+" pebbles, and can get more through Math Time.")
-	console.log("\n\n1) Math Time!\n2)"+userPenguin.name+", do a trick! (Costs "+pebbleCost+" pebbles)")
+	console.log("\n1) Math Time!\n2)"+userPenguin.name+", do a trick! (Costs "+pebbleCost+" pebbles)\n0) Quit Game")
 	userPrompt.question("", function(input) {
 		if (input == "1") {
 			//math time!
 		} else if (input == "2") {
-			//do a trick
+			if (pebbleCount >= pebbleCost) {
+				trickType = Math.floor((Math.random()* 3) + 1);
+				if (trickType == 1) {
+					console.log(userPenguin.name+" did a crazy hand stand! Woop woop!")
+					sleep(2000);
+					sleep(2000);
+					pebbleCost += 3;
+					mainMenu();
+				} else if (trickType == 2) {
+					console.log(userPenguin.name+" jumped on a bicycle and popped a wheelie!")
+					sleep(2000);
+					sleep(2000);
+					pebbleCost += 5;
+					mainMenu();
+				} else if (trickType == 3) {
+					console.log(userPenguin.name+" did a tripple sowcow off the high dive!")
+					sleep(2000);
+					sleep(2000);
+					pebbleCost += 7;
+					mainMenu();
+				}
+			}
 		} else if (input == "0") {
 			//end game
 			process.exit();
@@ -86,11 +107,17 @@ function penguinMaker() {
 				console.log("Rockhopper?");
 				sleep(200);
 				userPrompt.question("", function(type) {
-				type = type.toUpperCase();
-				if (type == "EMPEROR" || type == "GENTOO" || type == "ROCKHOPPER")
-					pPeng = new penguin(name, gender, type);
-					userPenguin = pPeng;
-					mainMenu();
+					type = type.toUpperCase();
+					if (type == "EMPEROR" || type == "GENTOO" || type == "ROCKHOPPER") {
+						pPeng = new penguin(name, gender, type);
+						userPenguin = pPeng;
+						mainMenu();
+					} else {
+						console.log("Sorry, you must enter Emperor, Gentoo, or Rockhopper. Let's start again...")
+						sleep(2000);
+						sleep(2000);
+						penguinMaker();
+					}
 				});
 			} else {
 				console.log("Sorry, please tell me if they're a BOY or a GIRL. Let's start again...")
@@ -118,3 +145,4 @@ function playerName() {
 //*******Runners********
 
 playerName();
+//mainMenu();
