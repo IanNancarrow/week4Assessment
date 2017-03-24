@@ -35,6 +35,9 @@ var wipeScreen = function () {
 
 //*******Variables*******
 
+var userName;
+var penguinName;
+var pebbleCount;
 
 
 
