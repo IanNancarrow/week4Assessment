@@ -50,7 +50,7 @@ var pebbleCost;
 function mainMenu() {
 	wipeScreen();
 	console.log("");
-	userPrompt.question("", function(entry) {
+	userPrompt.question("", function(input) {
 		if (input == "1") {
 			//math time!
 		} else if (input == "2") {
@@ -71,7 +71,7 @@ function penguinMaker() {
 		userPrompt.question("", function(gender) {
 			console.log("What kind of penguin are they?");
 			userPrompt.question("", function(type) {
-				
+				mainMenu();
 			});
 		});
 	});
@@ -80,7 +80,8 @@ function penguinMaker() {
 function playerName() {
 	console.log("Hello there! What's your name?")
 	userPrompt.question("", function(entry) {
-		userName; = entry;
+		userName = entry;
+		penguinMaker();
 	});
 }
 
@@ -91,4 +92,4 @@ function playerName() {
 
 //*******Runners********
 
-mainMenu();
+playerName();
