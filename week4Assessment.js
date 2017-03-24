@@ -42,20 +42,30 @@ var penguin = function(name, gender, type) {
 
 var userName;
 var pebbleCount;
-
+var pebbleCost;
 
 
 //*******Functions*******
 
 function mainMenu() {
 	wipeScreen();
-	
+	console.log("");
+	userPrompt.question("", function(entry) {
+		if (input == "1") {
+			//math time!
+		} else if (input == "2") {
+			//do a trick
+		} else if (input == "0") {
+			//end game
+			process.exit();
+		}
+	});
 }
 
 function penguinMaker() {
 	wipeScreen();
 	sleep(500);
-	console.log("I see you have a penguin with you! What's their name?");
+	console.log("I see you have a penguin with you, "+userName+"! What's their name?");
 	userPrompt.question("", function(name) {
 		console.log("Are they a boy or a girl?");
 		userPrompt.question("", function(gender) {
