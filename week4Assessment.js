@@ -54,7 +54,16 @@ function mainMenu() {
 	console.log("\n1) Math Time!\n2)"+userPenguin.name+", do a trick! (Costs "+pebbleCost+" pebbles)\n0) Quit Game")
 	userPrompt.question("", function(input) {
 		if (input == "1") {
-			//math time!
+			console.log("It's math time!");
+			num1 = Math.floor((Math.random()* 20) + 1);
+			num2 = Math.floor((Math.random()* 20) + 1);
+			console.log("What is "+num1+" + "+num2+"?")
+			
+			userPrompt.question("", function(entry) {
+
+});
+
+
 		} else if (input == "2") {
 			if (pebbleCount >= pebbleCost) {
 				trickType = Math.floor((Math.random()* 3) + 1);
