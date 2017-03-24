@@ -56,7 +56,7 @@ function mainMenu() {
 		if (input == "1") {
 			//math time!
 		} else if (input == "2") {
-			//do a trick
+			if ()
 		} else if (input == "0") {
 			//end game
 			process.exit();
