@@ -51,7 +51,7 @@ function mainMenu() {
 	wipeScreen();
 	console.log("Alright, what would you and "+ userPenguin.name +" like to do?");
 	console.log("You currently have "+ pebbleCount+" pebbles, and can get more through Math Time.")
-	console.log("\n\n1) Math Time!\n2)"+userPenguin.name+", do a trick! (Costs "+pebbleCost+" pebbles)")
+	console.log("\n\n1) Math Time!\n2)"+userPenguin.name+", do a trick! (Costs "+pebbleCost+" pebbles)\n 0) Quit Game")
 	userPrompt.question("", function(input) {
 		if (input == "1") {
 			//math time!
@@ -62,16 +62,19 @@ function mainMenu() {
 					console.log(userPenguin.name+" did a crazy hand stand! Woop woop!")
 					sleep(2000);
 					sleep(2000);
+					pebbleCost += 3;
 					mainMenu();
 				} else if (trickType == 2) {
 					console.log(userPenguin.name+" jumped on a bicycle and popped a wheelie!")
 					sleep(2000);
 					sleep(2000);
+					pebbleCost += 5;
 					mainMenu();
 				} else if (trickType == 3) {
 					console.log(userPenguin.name+" did a tripple sowcow off the high dive!")
 					sleep(2000);
 					sleep(2000);
+					pebbleCost += 7;
 					mainMenu();
 				}
 			}
