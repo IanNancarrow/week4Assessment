@@ -41,15 +41,16 @@ var penguin = function(name, gender, type) {
 //*******Variables*******
 
 var userName;
-var pebbleCount;
+var pebbleCount = 20;
 var pebbleCost;
-
+var userPenguin
 
 //*******Functions*******
 
 function mainMenu() {
 	wipeScreen();
-	console.log("");
+	console.log("Alright, what would you and "+ userPenguin.name +" like to do?");
+	console.log("You currently have "+ pebbleCount+" pebbles, and can get more through Math Game.")
 	userPrompt.question("", function(input) {
 		if (input == "1") {
 			//math time!
@@ -86,6 +87,8 @@ function penguinMaker() {
 				userPrompt.question("", function(type) {
 				type = type.toUpperCase();
 				if (type == "EMPEROR" || type == "GENTOO" || type == "ROCKHOPPER")
+					pPeng = new penguin(name, gender, type);
+					userPenguin = pPeng;
 					mainMenu();
 				});
 			} else {
