@@ -55,12 +55,12 @@ function mainMenu() {
 function penguinMaker() {
 	wipeScreen();
 	sleep(500);
-	var penguinName;
-	var penguinGend;
-	var penguinType;
 	console.log("I see you have a penguin with you! What's their name?");
 	userPrompt.question("", function(name) {
-		
+		console.log("Are they a boy or a girl?");
+		userPrompt.question("", function(gender) {
+			
+		});
 	});
 
 }
