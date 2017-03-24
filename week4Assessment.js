@@ -41,7 +41,6 @@ var penguin = function(name, gender, type) {
 //*******Variables*******
 
 var userName;
-var nameHolder;
 var pebbleCount;
 
 
@@ -56,9 +55,12 @@ function mainMenu() {
 function penguinMaker() {
 	wipeScreen();
 	sleep(500);
+	var penguinName;
+	var penguinGend;
+	var penguinType;
 	console.log("I see you have a penguin with you! What's their name?");
 	userPrompt.question("", function(name) {
-
+		
 	});
 
 }
