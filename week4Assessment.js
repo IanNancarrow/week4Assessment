@@ -63,6 +63,16 @@ function mainMenu() {
 					sleep(2000);
 					sleep(2000);
 					mainMenu();
+				} else if (trickType == 2) {
+					console.log(userPenguin.name+" jumped on a bicycle and popped a wheelie!")
+					sleep(2000);
+					sleep(2000);
+					mainMenu();
+				} else if (trickType == 3) {
+					console.log(userPenguin.name+" did a tripple sowcow off the high dive!")
+					sleep(2000);
+					sleep(2000);
+					mainMenu();
 				}
 			}
 		} else if (input == "0") {
