@@ -42,7 +42,7 @@ var penguin = function(name, gender, type) {
 
 var userName;
 var pebbleCount = 20;
-var pebbleCost;
+var pebbleCost = 20;
 var userPenguin
 
 //*******Functions*******
@@ -50,7 +50,8 @@ var userPenguin
 function mainMenu() {
 	wipeScreen();
 	console.log("Alright, what would you and "+ userPenguin.name +" like to do?");
-	console.log("You currently have "+ pebbleCount+" pebbles, and can get more through Math Game.")
+	console.log("You currently have "+ pebbleCount+" pebbles, and can get more through Math Time.")
+	console.log("\n\n1) Math Time!\n2)"+userPenguin.name+", do a trick! (Costs "+pebbleCost+" pebbles)")
 	userPrompt.question("", function(input) {
 		if (input == "1") {
 			//math time!
