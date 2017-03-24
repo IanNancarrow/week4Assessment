@@ -59,13 +59,20 @@ function penguinMaker() {
 	userPrompt.question("", function(name) {
 		console.log("Are they a boy or a girl?");
 		userPrompt.question("", function(gender) {
-			
+			console.log("What kind of penguin are they?");
+			userPrompt.question("", function(type) {
+				
+			});
 		});
 	});
-
 }
 
-
+function playerName() {
+	console.log("Hello there! What's your name?")
+	userPrompt.question("", function(entry) {
+		userName; = entry;
+	});
+}
 
 
 
