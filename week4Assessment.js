@@ -58,10 +58,19 @@ function mainMenu() {
 			num1 = Math.floor((Math.random()* 20) + 1);
 			num2 = Math.floor((Math.random()* 20) + 1);
 			console.log("What is "+num1+" + "+num2+"?")
-			
 			userPrompt.question("", function(entry) {
+				if (num1+num2 == entry) {
+					console.log("Correct! You win 5 pebbles!");
+					pebbleCount += 5;
+					sleep(2000);
+					mainMenu();
+				} else {
+					console.log("Incorrect! Sorry, you lose!");
+					sleep(2000);
+					mainMenu();
+				}
 
-});
+			});
 
 
 		} else if (input == "2") {
