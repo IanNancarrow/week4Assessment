@@ -51,7 +51,7 @@ function mainMenu() {
 	wipeScreen();
 	console.log("Alright, what would you and "+ userPenguin.name +" like to do?");
 	console.log("You currently have "+ pebbleCount+" pebbles, and can get more through Math Time.")
-	console.log("\n1) Math Time!\n2)"+userPenguin.name+", do a trick! (Costs "+pebbleCost+" pebbles)\n0) Quit Game")
+	console.log("\n1) Math Time!\n2) "+userPenguin.name+", do a trick! (Costs "+pebbleCost+" pebbles)\n0) Quit Game")
 	userPrompt.question("", function(input) {
 		if (input == "1") {
 			console.log("It's math time!");
@@ -102,6 +102,11 @@ function mainMenu() {
 		} else if (input == "0") {
 			//end game
 			process.exit();
+		} else {
+			console.log("Sorry, please enter in 1, 2, or 0...")
+			sleep(2000);
+			sleep(1000);
+			mainMenu();
 		}
 	});
 }
