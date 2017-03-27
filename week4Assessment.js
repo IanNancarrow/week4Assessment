@@ -65,7 +65,8 @@ function mainMenu() {
 					sleep(2000);
 					mainMenu();
 				} else {
-					console.log("Incorrect! Sorry, you lose!");
+					console.log("Incorrect! You lose 5 pebbles!");
+					pebbleCount -= 5;
 					sleep(2000);
 					mainMenu();
 				}
@@ -77,7 +78,7 @@ function mainMenu() {
 			if (pebbleCount >= pebbleCost) {
 				trickType = Math.floor((Math.random()* 3) + 1);
 				if (trickType == 1) {
-					console.log(userPenguin.name+" did a crazy hand stand! Woop woop!")
+					console.log(userPenguin.name+" did a crazy handstand! Woop woop!")
 					sleep(2000);
 					sleep(2000);
 					pebbleCount -= pebbleCost;
@@ -91,19 +92,24 @@ function mainMenu() {
 					pebbleCost += 5;
 					mainMenu();
 				} else if (trickType == 3) {
-					console.log(userPenguin.name+" did a tripple sowcow off the high dive!")
+					console.log(userPenguin.name+" did a triple sowcow off the high dive!")
 					sleep(2000);
 					sleep(2000);
 					pebbleCount -= pebbleCost;
 					pebbleCost += 7;
 					mainMenu();
 				}
+			} else {
+				console.log("Oops, not enough pebbles!");
+				sleep(2000);
+				sleep(1000);
+				mainMenu();
 			}
 		} else if (input == "0") {
 			//end game
 			process.exit();
 		} else {
-			console.log("Sorry, please enter in 1, 2, or 0...")
+			console.log("Sorry, please enter in 1, 2, or 0...");
 			sleep(2000);
 			sleep(1000);
 			mainMenu();
